@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float ShakePower=0.2f;
     [SerializeField] private float ShakeRandomness = 90;
     [SerializeField] private Ease JumpEase;
-    public delegate void move(Vector3 position);
+    public delegate void move(float positionZ);
     public event move OnMoved;
     void Start()
     {
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (OnMoved != null)
                 {
-                    OnMoved(transform.position);
+                    OnMoved(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")));
                 }
             }
         }
