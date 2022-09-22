@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float ShakePower=0.2f;
     [SerializeField] private float ShakeRandomness = 90;
     [SerializeField] private Ease JumpEase;
+    public delegate void move(Vector3 position);
+    public event move OnMoved;
     void Start()
     {
         
@@ -33,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
                 Jump.Insert(0, transform.DORotate(new Vector3(0, rotationValue, 0), MovementDuration));
                 Jump.Insert(0,transform.DOJump(new Vector3(transform.position.x , transform.position.y, transform.position.z+ Mathf.Sign(Input.GetAxis("Vertical"))),JumpPower,1, MovementDuration, false)).SetEase(JumpEase);
                 Jump.Append(transform.DOShakeScale(0.15f, ShakePower * new Vector3(-1, 1, -1), 1, 90, true));
+
+                if (OnMoved != null)
+                {
+                    OnMoved(transform.position);
+                }
             }
         }
     }
