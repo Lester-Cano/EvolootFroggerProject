@@ -1533,6 +1533,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290961438}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &307262305 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3051540225677397927, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+  m_PrefabInstance: {fileID: 1053829908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &324934249
 GameObject:
   m_ObjectHideFlags: 0
@@ -6485,6 +6490,11 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!4 &990381313 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 610227419603622548, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+  m_PrefabInstance: {fileID: 1053829908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018258851
 GameObject:
   m_ObjectHideFlags: 0
@@ -6637,6 +6647,14 @@ PrefabInstance:
       propertyPath: timeBetweenCars
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5044224443234608214, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: positions.Array.data[0]
+      value: 
+      objectReference: {fileID: 307262305}
+    - target: {fileID: 5044224443234608214, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: positions.Array.data[1]
+      value: 
+      objectReference: {fileID: 990381313}
     - target: {fileID: 5371000445375690203, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: m_Name
       value: Car Road
