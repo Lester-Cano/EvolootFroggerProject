@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     public event LostALive OnLostALive;
     public event LostALive OnReachEnd;
 
-    public BoxCollider characterCollider;
+    private BoxCollider characterCollider;
+    [SerializeField] public Transform spawnPos;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Danger"))
         {
             OnLostALive?.Invoke();
+            transform.position = spawnPos.transform.position;
         }
         else if (other.CompareTag("WinZone"))
         {

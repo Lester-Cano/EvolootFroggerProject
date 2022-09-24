@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void HanldeRestartGame()
     {
+        Debug.Log("Restarting");
         OnRestart?.Invoke();
     }
 
