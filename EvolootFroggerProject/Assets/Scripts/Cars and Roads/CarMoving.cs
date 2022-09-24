@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CarMoving : MonoBehaviour
 {
-    [SerializeField] public bool directionLeft;
+    [SerializeField] public bool directionLeftCar;
     [SerializeField] private float speed;
 
     void Update()
     {
 
-        if (directionLeft)
+        if (directionLeftCar)
         {
             MoveLeft();
         }

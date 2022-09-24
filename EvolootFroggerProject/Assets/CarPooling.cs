@@ -66,7 +66,7 @@ public class CarPooling : MonoBehaviour
         if (directionLeft)
         {
             GameObject car = RequestCar();
-            car.GetComponent<CarPooling>().directionLeft = true;
+            car.gameObject.GetComponent<CarMoving>().directionLeftCar = true;
             car.transform.position = positions[1].transform.position + Vector3.left * carOffset;
         }
         else
