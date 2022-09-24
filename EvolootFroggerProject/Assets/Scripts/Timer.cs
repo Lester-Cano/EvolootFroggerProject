@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public delegate void TimeOver();
+    public event TimeOver OnTimeOver;
+
     GameManager gameManager;
     [SerializeField] private Image uiFillImage;
     public int remainingDuration;
@@ -55,10 +58,16 @@ public class Timer : MonoBehaviour
 
     private IEnumerator UpdateTimer()
     {
-        while(remainingDuration > 0)
+        while (remainingDuration >= 0)
         {
+            if (remainingDuration == 0)
+            {
+                TimeIsOver();
+            }
+
             UpdateUI(remainingDuration);
             remainingDuration--;
+
             yield return new WaitForSeconds(1f);
         }
     }
@@ -66,5 +75,10 @@ public class Timer : MonoBehaviour
     private void UpdateUI(int seconds)
     {
         uiFillImage.fillAmount = Mathf.InverseLerp(0, Duration, seconds);
+    }
+
+    private void TimeIsOver()
+    {
+        OnTimeOver?.Invoke();
     }
 }

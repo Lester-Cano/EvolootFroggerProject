@@ -6,35 +6,38 @@ using DG.Tweening;
 public class HealthController : MonoBehaviour
 {
     [SerializeField] private RectTransform[] arrayImgs;
-    public delegate void Loose();
-    public event Loose OnGameOver;
+    public GameManager gameManager;
+    public bool withoutLives;
+
     void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         arrayImgs = gameObject.GetComponentsInChildren<RectTransform>(); 
     }
-    private void Update()
+
+    private void OnEnable()
     {
-        if (Input.GetButtonDown("Fire1")){
-            DecreaseLive();
-        }
+        gameManager.OnRestart += ResetLives;
+    }
+
+    private void OnDisable()
+    {
+        gameManager.OnRestart += ResetLives;
     }
 
     public void DecreaseLive()
     {
         for(int i = 1; i < arrayImgs.Length; i++)
         {
-            Debug.Log(i);
             if (arrayImgs[i].gameObject.activeInHierarchy)
             {
-                /*
-                RectTransform rect = arrayImgs[i];
-                rect.DOShakeAnchorPos(10, 10, 10, 90, false, false);
-                */
                 arrayImgs[i].gameObject.SetActive(false);
-                if(i==arrayImgs.Length-1 && OnGameOver!= null)
+
+                if(i == arrayImgs.Length - 1)
                 {
-                    OnGameOver?.Invoke();
+                    withoutLives = true;
                 }
+
                 break;
             }
         }
@@ -42,6 +45,15 @@ public class HealthController : MonoBehaviour
 
     public void ResetLives()
     {
+        withoutLives = false;
+        RefillLives();
+    }
 
+    public void RefillLives()
+    {
+        for (int i = 1; i < arrayImgs.Length; i++)
+        {
+            arrayImgs[i].gameObject.SetActive(true);
+        }
     }
 }

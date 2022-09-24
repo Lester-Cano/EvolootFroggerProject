@@ -16,13 +16,13 @@ public class Lose : MonoBehaviour
     }
     private void OnEnable()
     {
-        healthController.OnGameOver += GameOver;
         gameManager.OnRestart += OnReset;
+        gameManager.OnGameOverLost += GameOver;
     }
     private void OnDisable()
     {
-        healthController.OnGameOver -= GameOver;
         gameManager.OnRestart -= OnReset;
+        gameManager.OnGameOverLost -= GameOver;
     }
     public void GameOver()
     {

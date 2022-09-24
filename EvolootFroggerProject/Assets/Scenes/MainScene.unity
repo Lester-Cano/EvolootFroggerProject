@@ -10281,6 +10281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayImgs: []
+  gameManager: {fileID: 0}
+  withoutLives: 0
 --- !u!1 &1610449596
 GameObject:
   m_ObjectHideFlags: 0
