@@ -33,7 +33,6 @@ public class HealthController : MonoBehaviour
                 arrayImgs[i].gameObject.SetActive(false);
                 if(i==arrayImgs.Length-1 && OnGameOver!= null)
                 {
-                    Debug.Log("gameover");
                     OnGameOver?.Invoke();
                 }
                 break;

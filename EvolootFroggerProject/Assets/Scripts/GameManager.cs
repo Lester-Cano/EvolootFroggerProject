@@ -9,17 +9,17 @@ public class GameManager : MonoBehaviour
     public event GameOver OnGameOverWin;
     public event GameOver OnRestart;
 
-    private void HanldeRestartGame()
+    public void HanldeRestartGame()
     {
         OnRestart?.Invoke();
     }
 
-    private void HandleGameOver()
+    public void HandleGameOver()
     {
         OnGameOverLost?.Invoke();
     }
 
-    private void HandleWin()
+    public void HandleWin()
     {
         OnGameOverWin?.Invoke();
     }

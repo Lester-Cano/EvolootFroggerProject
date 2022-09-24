@@ -33,7 +33,7 @@ public class Win : MonoBehaviour
     public void GameOver()
     {
         //group.gameObject.SetActive(true);
-        group.DOFade(1, 1.5f).SetDelay(0.5f);
+        group.DOFade(1, 0.5f).SetDelay(1.5f);
         TweenToTarget(winTitle, TitlePos);
         TweenToTarget(replayB, replayBPos);
         TweenToTarget(menuB, menuBPos);
