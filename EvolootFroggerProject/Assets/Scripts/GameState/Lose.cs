@@ -26,8 +26,6 @@ public class Lose : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("3");
-        //group.gameObject.SetActive(true);
         group.DOFade(1, 0.5f).SetDelay(0.5f);
         Sequence ShowTitle = DOTween.Sequence();
         ShowTitle.Append(gameOverRect.DOAnchorPos(new Vector2(1028, 529), 1, false));
@@ -36,7 +34,6 @@ public class Lose : MonoBehaviour
 
     public void OnReset()
     {
-        //group.gameObject.SetActive(false);
         group.DOFade(0, 1.5f).SetDelay(0.5f);
     }
 }

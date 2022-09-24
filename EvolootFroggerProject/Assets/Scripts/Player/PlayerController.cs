@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public delegate void LostALive();
     public event LostALive OnLostALive;
+    public event LostALive OnReachEnd;
 
     public BoxCollider characterCollider;
 
@@ -19,6 +20,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Danger"))
         {
             OnLostALive?.Invoke();
+        }
+        else if (other.CompareTag("WinZone"))
+        {
+            OnReachEnd?.Invoke();
         }
     }
 }

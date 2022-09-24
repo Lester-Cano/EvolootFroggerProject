@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Car
-  tags:
   - Danger
+  - WinZone
   layers:
   - Default
   - TransparentFX

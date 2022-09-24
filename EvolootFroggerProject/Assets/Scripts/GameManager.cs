@@ -11,21 +11,25 @@ public class GameManager : MonoBehaviour
 
     private Timer timer;
     private HealthController healthController;
+    private PlayerController playerController;
 
     private void Awake()
     {
         timer = FindObjectOfType<Timer>();
         healthController = FindObjectOfType<HealthController>();
+        playerController = FindObjectOfType<PlayerController>();
     }
     private void OnEnable()
     {
         timer.OnTimeOver += CheckIfLost;
         healthController.OnLifesOver += CheckIfLost;
+        playerController.OnReachEnd += HandleWin;
     }
     private void OnDisable()
     {
         timer.OnTimeOver -= CheckIfLost;
         healthController.OnLifesOver -= CheckIfLost;
+        playerController.OnReachEnd -= HandleWin;
     }
 
     public void HanldeRestartGame()
@@ -45,10 +49,6 @@ public class GameManager : MonoBehaviour
 
     private void CheckIfLost()
     {
-        if (healthController.withoutLives || timer.remainingDuration <= 0)
-        {
-            Debug.Log("2");
-            HandleGameOver();
-        }
+        HandleGameOver();
     }
 }
