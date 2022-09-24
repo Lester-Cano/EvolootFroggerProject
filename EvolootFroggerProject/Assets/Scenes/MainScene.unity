@@ -513,7 +513,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 68619295}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1631671757}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadNewScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &68619295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,7 +2409,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 424570665}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1631671757}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadNewScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &424570665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10484,6 +10508,7 @@ GameObject:
   - component: {fileID: 1631671750}
   - component: {fileID: 1631671755}
   - component: {fileID: 1631671756}
+  - component: {fileID: 1631671757}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -10626,6 +10651,18 @@ MonoBehaviour:
   TitlePos: {fileID: 2079726100}
   replayBPos: {fileID: 2045319469}
   menuBPos: {fileID: 575414761}
+--- !u!114 &1631671757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631671749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bccd6cbc2eb7f0c4cbced17e5e714cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631816713
 GameObject:
   m_ObjectHideFlags: 0
