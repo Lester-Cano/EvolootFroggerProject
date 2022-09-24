@@ -19,13 +19,12 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void DecreaseLive()
     {
-        for(int i=1;i< arrayImgs.Length ; i++)
+        for(int i = 1; i < arrayImgs.Length; i++)
         {
             Debug.Log(i);
-            if (arrayImgs[i].gameObject.active)
+            if (arrayImgs[i].gameObject.activeInHierarchy)
             {
                 /*
                 RectTransform rect = arrayImgs[i];
@@ -35,10 +34,15 @@ public class HealthController : MonoBehaviour
                 if(i==arrayImgs.Length-1 && OnGameOver!= null)
                 {
                     Debug.Log("gameover");
-                    OnGameOver();
+                    OnGameOver?.Invoke();
                 }
                 break;
             }
         }
+    }
+
+    public void ResetLives()
+    {
+
     }
 }
