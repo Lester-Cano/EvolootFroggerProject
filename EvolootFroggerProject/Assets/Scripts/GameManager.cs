@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         timer.OnTimeOver += CheckIfLost;
+        healthController.OnLifesOver += CheckIfLost;
     }
     private void OnDisable()
     {
         timer.OnTimeOver -= CheckIfLost;
+        healthController.OnLifesOver -= CheckIfLost;
     }
 
     public void HanldeRestartGame()
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
     {
         if (healthController.withoutLives || timer.remainingDuration <= 0)
         {
+            Debug.Log("2");
             HandleGameOver();
         }
     }

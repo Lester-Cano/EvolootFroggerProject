@@ -5,41 +5,47 @@ using DG.Tweening;
 
 public class HealthController : MonoBehaviour
 {
-    [SerializeField] private RectTransform[] arrayImgs;
+    public delegate void LifesOver();
+    public event LifesOver OnLifesOver;
+
     public GameManager gameManager;
+    public PlayerController playerController;
+    [SerializeField] private RectTransform[] arrayImgs;
     public bool withoutLives;
+
+    [SerializeField] private int lives = 5;
 
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        arrayImgs = gameObject.GetComponentsInChildren<RectTransform>(); 
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void OnEnable()
     {
         gameManager.OnRestart += ResetLives;
+        playerController.OnLostALive += DecreaseLive;
     }
 
     private void OnDisable()
     {
-        gameManager.OnRestart += ResetLives;
+        gameManager.OnRestart -= ResetLives;
+        playerController.OnLostALive -= DecreaseLive;
     }
 
     public void DecreaseLive()
     {
-        for(int i = 1; i < arrayImgs.Length; i++)
+        if(lives >= 0)
         {
-            if (arrayImgs[i].gameObject.activeInHierarchy)
-            {
-                arrayImgs[i].gameObject.SetActive(false);
+            arrayImgs[lives - 1].gameObject.SetActive(false);
+            lives--;
+        }
 
-                if(i == arrayImgs.Length - 1)
-                {
-                    withoutLives = true;
-                }
-
-                break;
-            }
+        if (lives <= 0)
+        {
+            Debug.Log("1");
+            OnLifesOver?.Invoke();
+            withoutLives = true;
         }
     }
 
@@ -51,9 +57,11 @@ public class HealthController : MonoBehaviour
 
     public void RefillLives()
     {
-        for (int i = 1; i < arrayImgs.Length; i++)
+        for (int i = 0; i < arrayImgs.Length; i++)
         {
             arrayImgs[i].gameObject.SetActive(true);
         }
+
+        lives = 5;
     }
 }
