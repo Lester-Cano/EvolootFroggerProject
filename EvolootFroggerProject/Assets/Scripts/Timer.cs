@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    Restart restartController;
+    GameManager gameManager;
     [SerializeField] private Image uiFillImage;
     public int remainingDuration;
     public int maxDuration;
@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         ResetTimer();
-        restartController = FindObjectOfType<Restart>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Start()
@@ -27,11 +27,11 @@ public class Timer : MonoBehaviour
 
     private void OnEnable()
     {
-        restartController.OnRestart += ResetTimer;
+        gameManager.OnRestart += ResetTimer;
     }
     private void OnDisable()
     {
-        restartController.OnRestart -= ResetTimer;
+        gameManager.OnRestart -= ResetTimer;
     }
 
     private void ResetTimer()

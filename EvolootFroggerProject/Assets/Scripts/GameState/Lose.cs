@@ -6,23 +6,23 @@ using DG.Tweening;
 public class Lose : MonoBehaviour
 {
     HealthController healthController;
-    Restart restartController;
+    GameManager gameManager;
     [SerializeField] private CanvasGroup group;
     [SerializeField] private RectTransform gameOverRect;
     private void Awake()
     {
+        gameManager = GetComponent<GameManager>();
         healthController = FindObjectOfType<HealthController>();
-        restartController = FindObjectOfType<Restart>();
     }
     private void OnEnable()
     {
         healthController.OnGameOver += GameOver;
-        restartController.OnRestart += OnReset;
+        gameManager.OnRestart += OnReset;
     }
     private void OnDisable()
     {
         healthController.OnGameOver -= GameOver;
-        restartController.OnRestart -= OnReset;
+        gameManager.OnRestart -= OnReset;
     }
     public void GameOver()
     {

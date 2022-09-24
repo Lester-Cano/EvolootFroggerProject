@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Win : MonoBehaviour
 {
     GameManager gameManager;
-    Restart restartController;
     [SerializeField] private CanvasGroup group;
     [SerializeField] private GameObject winTitle, replayB, menuB;
     [SerializeField] private Transform TitlePos,replayBPos, menuBPos;
@@ -16,7 +15,6 @@ public class Win : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        restartController = FindObjectOfType<Restart>();
         TitleOldPos = winTitle.transform;
         replayBOldPos = replayB.transform;
         menuBOldPos = menuB.transform;
@@ -24,12 +22,12 @@ public class Win : MonoBehaviour
     private void OnEnable()
     {
         gameManager.OnGameOverWin += GameOver;
-        restartController.OnRestart += OnReset;
+        gameManager.OnRestart += OnReset;
     }
     private void OnDisable()
     {
         gameManager.OnGameOverWin -= GameOver;
-        restartController.OnRestart -= OnReset;
+        gameManager.OnRestart -= OnReset;
     }
 
     public void GameOver()

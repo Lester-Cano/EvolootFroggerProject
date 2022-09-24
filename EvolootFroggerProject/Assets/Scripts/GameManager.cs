@@ -7,11 +7,20 @@ public class GameManager : MonoBehaviour
     public delegate void GameOver();
     public event GameOver OnGameOverLost;
     public event GameOver OnGameOverWin;
+    public event GameOver OnRestart;
 
-    private Restart restart;
-
-    private void Awake()
+    private void HanldeRestartGame()
     {
-        restart = FindObjectOfType<Restart>();
+        OnRestart?.Invoke();
+    }
+
+    private void HandleGameOver()
+    {
+        OnGameOverLost?.Invoke();
+    }
+
+    private void HandleWin()
+    {
+        OnGameOverWin?.Invoke();
     }
 }
