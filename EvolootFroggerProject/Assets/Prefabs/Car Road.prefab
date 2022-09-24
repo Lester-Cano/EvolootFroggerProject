@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 141678689286229516}
   - component: {fileID: 5316599714588071647}
   - component: {fileID: 2556719391093192368}
+  - component: {fileID: 5044224443234608214}
   m_Layer: 0
   m_Name: Car Road
   m_TagString: Untagged
@@ -32,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 3051540225677397927}
   - {fileID: 610227419603622548}
+  - {fileID: 2480365299403423969}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,6 +99,58 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5044224443234608214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5371000445375690203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ba20dafa3a7bc4b8d403fbfc243756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usingCar: {fileID: 0}
+  initialCarNumber: 5
+  carList: []
+  positions:
+  - {fileID: 3051540225677397927}
+  - {fileID: 610227419603622548}
+  pool: {fileID: 2480365299403423969}
+  timeBetweenCars: 0
+  carOffset: 0.5
+  directionLeft: 0
+--- !u!1 &7500147016411587929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2480365299403423969}
+  m_Layer: 0
+  m_Name: Car pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2480365299403423969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7500147016411587929}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5525314457489306265}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8353922809739520452
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,8 +164,8 @@ GameObject:
   - component: {fileID: 3445524303357274227}
   - component: {fileID: 2848416215381536414}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Position 1
+  m_TagString: RoadEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8353922809739520452}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.545, y: 2.2066665, z: 0}
+  m_LocalPosition: {x: -0.645, y: 2.2066665, z: 0}
   m_LocalScale: {x: 0.083333336, y: 3.333333, z: 1}
   m_Children: []
   m_Father: {fileID: 5525314457489306265}
@@ -205,8 +259,8 @@ GameObject:
   - component: {fileID: 4807853743901664952}
   - component: {fileID: 1911851498902724396}
   m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
+  m_Name: Position 2
+  m_TagString: RoadEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8831324611350135715}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.542, y: 2.2066665, z: 0}
+  m_LocalPosition: {x: 0.642, y: 2.2066665, z: 0}
   m_LocalScale: {x: 0.083333336, y: 3.333333, z: 1}
   m_Children: []
   m_Father: {fileID: 5525314457489306265}
