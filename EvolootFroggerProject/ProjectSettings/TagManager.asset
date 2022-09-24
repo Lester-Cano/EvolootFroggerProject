@@ -7,6 +7,7 @@ TagManager:
   - Car
   - Danger
   - WinZone
+  - RoadEnd
   layers:
   - Default
   - TransparentFX

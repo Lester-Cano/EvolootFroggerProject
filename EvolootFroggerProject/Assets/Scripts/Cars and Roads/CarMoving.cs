@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class CarMoving : MonoBehaviour
 {
-    [SerializeField] private bool directionLeft;
+    [SerializeField] public bool directionLeft;
     [SerializeField] private float speed;
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -24,10 +23,19 @@ public class CarMoving : MonoBehaviour
 
     void MoveLeft()
     {
-        transform.Translate(Vector3.left*speed*Time.deltaTime);
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
     void MoveRight()
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("RoadEnd"))
+        {
+            Debug.Log("cardie");
+            gameObject.SetActive(false);
+        }
     }
 }

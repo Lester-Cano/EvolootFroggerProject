@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
                 Jump.Insert(0, transform.DORotate(new Vector3(0, 90 * Mathf.Sign(Input.GetAxis("Horizontal")), 0), MovementDuration));
                 Jump.Append(transform.DOShakeScale(0.15f,ShakePower*new Vector3(-1,1,-1),1,90,true));
             }
-            else if(Input.GetAxis("Vertical") != 0 )
+            if(Input.GetAxis("Vertical") != 0 )
             {
                 float rotationValue;
                 if (Mathf.Sign(Input.GetAxis("Vertical")) < 0) rotationValue = 180f;
