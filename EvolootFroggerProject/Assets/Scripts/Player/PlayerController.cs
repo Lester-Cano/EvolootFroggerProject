@@ -14,13 +14,13 @@ public class PlayerController : MonoBehaviour
     private BoxCollider characterCollider;
     [SerializeField] public Transform spawnPos;
 
-    private void Awake()
+    public void Awake()
     {
         characterCollider = GetComponent<BoxCollider>();
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         gameManager.OnRestart += RestartPlayer;
     }

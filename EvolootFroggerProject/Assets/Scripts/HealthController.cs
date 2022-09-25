@@ -21,13 +21,13 @@ public class HealthController : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         gameManager.OnRestart += ResetLives;
         playerController.OnLostALive += DecreaseLive;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         gameManager.OnRestart -= ResetLives;
         playerController.OnLostALive -= DecreaseLive;

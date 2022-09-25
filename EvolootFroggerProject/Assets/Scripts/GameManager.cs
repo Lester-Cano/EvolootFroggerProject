@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private Timer timer;
     private HealthController healthController;
     private PlayerController playerController;
+    private PlayerMovement PlayerMovement;
 
     private void Awake()
     {

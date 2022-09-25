@@ -34,6 +34,7 @@ public class Lose : MonoBehaviour
     }
     public void GameOver()
     {
+        group.gameObject.SetActive(true);
         group.DOFade(1, 0.5f).SetDelay(1.5f);
         TweenToTarget(winTitle, TitlePos);
         TweenToTarget(replayB, replayBPos);
@@ -44,6 +45,7 @@ public class Lose : MonoBehaviour
 
     public void OnReset()
     {
+        group.gameObject.SetActive(false);
         group.DOFade(0, 1.5f).SetDelay(0.5f);
         TweenToTarget(winTitle, TitleOldPos);
         TweenToTarget(replayB, replayBOldPos);

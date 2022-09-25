@@ -28,11 +28,11 @@ public class Timer : MonoBehaviour
         Begin();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         gameManager.OnRestart += ResetTimer;
     }
-    private void OnDisable()
+    public void OnDisable()
     {
         gameManager.OnRestart -= ResetTimer;
     }
