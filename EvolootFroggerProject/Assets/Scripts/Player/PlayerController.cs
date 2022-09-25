@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private BoxCollider characterCollider;
     [SerializeField] public Transform spawnPos;
 
-    public void Awake()
+    private void Awake()
     {
         characterCollider = GetComponent<BoxCollider>();
         gameManager = FindObjectOfType<GameManager>();
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         gameManager.OnRestart += RestartPlayer;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         gameManager.OnRestart -= RestartPlayer;
     }

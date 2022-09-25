@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         timer = FindObjectOfType<Timer>();
         healthController = FindObjectOfType<HealthController>();
         playerController = FindObjectOfType<PlayerController>();
+        PlayerMovement = FindObjectOfType<PlayerMovement>();
     }
     private void OnEnable()
     {
@@ -35,17 +36,25 @@ public class GameManager : MonoBehaviour
 
     public void HanldeRestartGame()
     {
-        Debug.Log("Restarting");
+        timer.OnEnable();
+        healthController.OnEnable();
+        playerController.OnEnable();
         OnRestart?.Invoke();
     }
 
     public void HandleGameOver()
     {
+        timer.OnDisable();
+        healthController.OnDisable();
+        playerController.OnDisable();
         OnGameOverLost?.Invoke();
     }
 
     public void HandleWin()
     {
+        timer.OnDisable();
+        healthController.OnDisable();
+        playerController.OnDisable();
         OnGameOverWin?.Invoke();
     }
 
