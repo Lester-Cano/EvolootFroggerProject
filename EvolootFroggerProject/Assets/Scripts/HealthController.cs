@@ -43,7 +43,6 @@ public class HealthController : MonoBehaviour
 
         if (lives <= 0)
         {
-            Debug.Log("1");
             OnLifesOver?.Invoke();
             withoutLives = true;
         }

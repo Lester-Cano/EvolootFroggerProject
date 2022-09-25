@@ -45,6 +45,6 @@ public class PlayerController : MonoBehaviour
 
     private void RestartPlayer()
     {
-        gameObject.transform.position += spawnPos.transform.position;
+        gameObject.transform.position = spawnPos.transform.position;
     }
 }
