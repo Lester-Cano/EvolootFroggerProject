@@ -34,8 +34,10 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Danger"))
         {
+            characterCollider.isTrigger = false;
             RestartPlayer();
             OnLostALive?.Invoke();
+            characterCollider.isTrigger = false;
         }
         else if (other.CompareTag("WinZone"))
         {
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
 
     private void RestartPlayer()
     {
+        Debug.Log("aaaaa");
         gameObject.transform.position = spawnPos.transform.position;
     }
+
 }

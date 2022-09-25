@@ -7,6 +7,7 @@ public class HealthController : MonoBehaviour
 {
     public delegate void LifesOver();
     public event LifesOver OnLifesOver;
+    public event LifesOver OnLifeLost;
 
     public GameManager gameManager;
     public PlayerController playerController;
@@ -39,6 +40,7 @@ public class HealthController : MonoBehaviour
         {
             arrayImgs[lives - 1].gameObject.SetActive(false);
             lives--;
+            OnLifeLost?.Invoke();
         }
 
         if (lives <= 0)
