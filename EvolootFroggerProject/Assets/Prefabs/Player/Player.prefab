@@ -494,7 +494,7 @@ MonoBehaviour:
   ShakeRandomness: 0
   JumpEase: 4
   playerMesh: {fileID: 2724725076580825584}
-  rayCastDistance: 0.01
+  rayCastDistance: 0.2
   grounded: 1
 --- !u!114 &2724725076598031671
 MonoBehaviour:
