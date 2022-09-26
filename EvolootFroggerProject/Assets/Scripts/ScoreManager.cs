@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private TMP_Text scoreTM;
     [SerializeField] private RectTransform scoreRect;
+    int maxScore = 0;
 
     [SerializeField] private float feedBackDuration;
     GameManager gm;
@@ -23,6 +24,7 @@ public class ScoreManager : MonoBehaviour
         scoreTM = gameObject.GetComponentInChildren<TMP_Text>();
         healthController = FindObjectOfType<HealthController>();
     }
+   
     private void OnEnable()
     {
         playerMovement.OnMoved += OnScoreChanged;
@@ -36,14 +38,18 @@ public class ScoreManager : MonoBehaviour
 
     public void OnScoreChanged(float positionZ)
     {
-        int newScore = (int)positionZ;
-        Debug.Log((int)positionZ);
-        if (previousScore != newScore && newScore >= 0)
+        
+        if ((int)positionZ > maxScore)
         {
-            scoreTM.text = (newScore * 10).ToString();
-            ShakeSizeTMP(newScore);
-            previousScore = newScore;
+            maxScore = (int)positionZ;
+        }
+        Debug.Log((int)positionZ);
 
+        if (previousScore != maxScore && maxScore >= 0)
+        {
+            scoreTM.text = (maxScore * 10).ToString();
+            ShakeSizeTMP(maxScore);
+            previousScore = maxScore;
         }
     }
     private void ShakeSizeTMP(int newScore)
