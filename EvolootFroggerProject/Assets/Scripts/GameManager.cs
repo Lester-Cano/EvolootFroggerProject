@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         timer.OnEnable();
         healthController.OnEnable();
         playerController.OnEnable();
+        PlayerMovement.OnEnable();
         OnRestart?.Invoke();
     }
 
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         timer.OnDisable();
         healthController.OnDisable();
         playerController.OnDisable();
+        PlayerMovement.OnDisable();
         OnGameOverLost?.Invoke();
     }
 
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
         timer.OnDisable();
         healthController.OnDisable();
         playerController.OnDisable();
+        PlayerMovement.OnDisable();
         OnGameOverWin?.Invoke();
     }
 

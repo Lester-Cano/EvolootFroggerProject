@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private float yStartPosition;
     RaycastHit hit;
     Tweener shakeScale;
+
+    private bool canMove;
     
 
 
@@ -25,6 +27,16 @@ public class PlayerMovement : MonoBehaviour
     {
         yStartPosition = transform.position.y;
     }
+
+    public void OnEnable()
+    {
+        canMove = true;
+    }
+    public void OnDisable()
+    {
+        canMove = false;
+    }
+
     private void FixedUpdate()
     {
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down).normalized * rayCastDistance, Color.yellow);
@@ -39,8 +51,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-       
-        if (Input.anyKeyDown && grounded/*&& (transform.position.x % 1) == 0 && (transform.position.z % 1) == 0*/)
+
+        if (Input.anyKeyDown && grounded && canMove)
         {
             
             MoveChar();
