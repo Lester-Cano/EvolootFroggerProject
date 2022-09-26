@@ -52,10 +52,12 @@ public class StumpsPooling : MonoBehaviour
         {
             if (!stumpList[i].activeSelf)
             {
+                Debug.Log("spawneo");
                 stumpList[i].SetActive(true);
                 return stumpList[i];
             }
         }
+        Debug.Log("Crear nuevo");
         AddStumpsToPool(1);
         stumpList[stumpList.Count - 1].SetActive(true);
         return stumpList[stumpList.Count - 1];
