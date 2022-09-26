@@ -5,17 +5,16 @@ using UnityEngine;
 public class LoadCharacter : MonoBehaviour
 {
     public GameObject[] characterPrefabs;
+    public GameObject player;
     [SerializeField] private Transform spawnPos;
 
     private void Awake()
     {
-        spawnPos = GameObject.FindGameObjectWithTag("Respawn").transform;
-    }
+        //spawnPos = GameObject.FindGameObjectWithTag("Respawn").transform;
 
-    private void Start()
-    {
-        int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
-        GameObject prefab = characterPrefabs[selectedCharacter];
-        GameObject clone = Instantiate(prefab, spawnPos.position, Quaternion.identity);
+        //int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
+
+        //GameObject prefab = characterPrefabs[selectedCharacter];
+        //GameObject clone = Instantiate(prefab, spawnPos.position, Quaternion.identity);
     }
 }

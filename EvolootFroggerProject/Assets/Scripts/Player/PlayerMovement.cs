@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public delegate void move(float positionZ);
     public event move OnMoved;
     [SerializeField] private float rayCastDistance;
-    [SerializeField] private bool grounded =true;
+    [SerializeField] private bool grounded = true;
     private float yStartPosition;
     RaycastHit hit;
     Tweener shakeScale;
@@ -41,24 +41,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down).normalized * rayCastDistance, Color.yellow);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down).normalized * rayCastDistance, out hit))
         {
             if (hit.collider.CompareTag("Ground"))
             {
-                
                 grounded = true;
             }
         }
     }
     void Update()
     {
-
         if (Input.anyKeyDown && grounded && canMove)
         {
-            
             MoveChar();
-           
         }
        
     }
@@ -73,12 +68,11 @@ public class PlayerMovement : MonoBehaviour
         grounded = false;
     }
 
- 
-
 
     private void MoveChar()
     {
-      
+        grounded = false;
+
         Sequence Jump = DOTween.Sequence();
         jump.OnJump();
         if (Input.GetAxis("Horizontal") != 0)
@@ -93,8 +87,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetAxis("Vertical") != 0)
         {
-
             float rotationValue;
+
             if (Mathf.Sign(Input.GetAxis("Vertical")) < 0) rotationValue = 180f;
             else rotationValue = 0f;
             Jump.Insert(0, transform.DORotate(new Vector3(0, rotationValue, 0), MovementDuration));
@@ -111,9 +105,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 OnMoved(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")));
             }
-            grounded = false;
         }
-        //resetTransform;
-
     }
 }
