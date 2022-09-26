@@ -33,13 +33,13 @@ public class Win : MonoBehaviour
 
     public void GameOver()
     {
+        confettiParticles.Play();
+
         group.gameObject.SetActive(true);
         group.DOFade(1, 0.5f).SetDelay(1.5f);
         TweenToTarget(winTitle, TitlePos);
         TweenToTarget(replayB, replayBPos);
         TweenToTarget(menuB, menuBPos);
-
-        StartCoroutine(PlayParticles());
     }
 
     public void OnReset()
@@ -54,12 +54,5 @@ public class Win : MonoBehaviour
     private void TweenToTarget(GameObject target, Transform newPos)
     {
         target.transform.DOMove(newPos.transform.position, 1, false);
-    }
-
-    private IEnumerator PlayParticles()
-    {
-        yield return new WaitForSeconds(2f);
-
-        confettiParticles.Play();
     }
 }
