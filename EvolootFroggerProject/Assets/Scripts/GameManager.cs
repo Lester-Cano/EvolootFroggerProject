@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public void HandleGameOver()
     {
         timer.OnDisable();
+        timer.StopAllCoroutines();
         healthController.OnDisable();
         playerController.OnDisable();
         PlayerMovement.OnDisable();
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
     public void HandleWin()
     {
         timer.OnDisable();
+        timer.StopAllCoroutines();
         healthController.OnDisable();
         playerController.OnDisable();
         PlayerMovement.OnDisable();

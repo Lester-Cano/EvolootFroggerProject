@@ -15,8 +15,6 @@ public class Timer : MonoBehaviour
     public int remainingDuration;
     public int maxDuration;
 
-    public bool canTime;
-
     public int Duration { get; private set; }
 
     private void Awake()
@@ -64,18 +62,15 @@ public class Timer : MonoBehaviour
     {
         while (remainingDuration >= 0)
         {
-            if (canTime)
+            if (remainingDuration == 0)
             {
-                if (remainingDuration == 0)
-                {
-                    TimeIsOver();
-                }
-
-                UpdateUI(remainingDuration);
-                remainingDuration--;
-
-                yield return new WaitForSeconds(1f);
+                TimeIsOver();
             }
+
+            UpdateUI(remainingDuration);
+            remainingDuration--;
+
+            yield return new WaitForSeconds(1f);
         }
     }
 
