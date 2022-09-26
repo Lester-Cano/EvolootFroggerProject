@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool grounded = true;
     private float yStartPosition;
     RaycastHit hit;
-    Tweener shakeScale;
 
     private bool canMove;
     
