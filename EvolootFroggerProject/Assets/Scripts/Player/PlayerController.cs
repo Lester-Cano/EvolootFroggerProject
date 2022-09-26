@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Danger") && hitted == false)
         {
             hitted = true;
-
+            sfx.DeathByCar();
             StartCoroutine(RestartPlayerHitted());
             OnLostALive?.Invoke();
 
