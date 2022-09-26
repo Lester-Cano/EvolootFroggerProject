@@ -65,18 +65,18 @@ public class PlayerMovement : MonoBehaviour
             playerMesh.transform.localScale = new Vector3(1, 1, 1);
         }
         playerMesh.DOShakeScale(0.15f, ShakePower * new Vector3(-1, 1, -1), 1, 90, true).SetDelay(MovementDuration);
-        grounded = false;
     }
 
 
     private void MoveChar()
     {
-        grounded = false;
-
         Sequence Jump = DOTween.Sequence();
-        jump.OnJump();
         if (Input.GetAxis("Horizontal") != 0)
         {
+            grounded = false;
+
+            jump.OnJump();
+
             Jump.Insert(0, transform.DORotate(new Vector3(0, 90 * Mathf.Sign(Input.GetAxis("Horizontal")), 0), MovementDuration));
             if (transform.position.y >= yStartPosition) Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x + Mathf.Sign(Input.GetAxis("Horizontal"))), yStartPosition, Mathf.RoundToInt(transform.position.z)), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
             else
@@ -87,6 +87,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetAxis("Vertical") != 0)
         {
+            grounded = false;
+
+            jump.OnJump();
+
             float rotationValue;
 
             if (Mathf.Sign(Input.GetAxis("Vertical")) < 0) rotationValue = 180f;
