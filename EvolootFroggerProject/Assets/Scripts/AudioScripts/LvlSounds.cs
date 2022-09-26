@@ -9,9 +9,13 @@ public class LvlSounds : MonoBehaviour
     private AudioSource mySource;
     private int randomNum;
 
-    private void Start()
+    private void Awake()
     {
         manager = FindObjectOfType<GameManager>();
+    }
+    private void Start()
+    {
+        
         mySource = GetComponent<AudioSource>();
         StartCoroutine(AHonkWillPlay());
     }
