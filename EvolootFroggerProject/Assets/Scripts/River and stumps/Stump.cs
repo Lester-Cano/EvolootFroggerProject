@@ -18,11 +18,11 @@ public class Stump : MonoBehaviour
         {
             MoveRight();
         }
-        if (timer > lifeTime)
+       /* if (timer > lifeTime)
         {
             player.transform.SetParent(null);
             this.gameObject.SetActive(false);
-        }
+        }*/
     }
 
     void MoveLeft()
@@ -37,7 +37,6 @@ public class Stump : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log("me garcharon");
             player = collision.gameObject;
             player.transform.SetParent(transform);
             
@@ -47,7 +46,6 @@ public class Stump : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log("me bugee");
             player = collision.gameObject;
             player.transform.SetParent(null);     
             
@@ -57,17 +55,22 @@ public class Stump : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            timer += Time.deltaTime;
+           // timer += Time.deltaTime;
         }
         
     }
     private void OnTriggerEnter(Collider other)
-    {   
-            
-            if (other.CompareTag("RoadEnd"))
-            {
-                gameObject.SetActive(false);
-            }
+    {
+        var playerInLog = gameObject.GetComponentInChildren<PlayerController>();
+        if (other.CompareTag("RoadEnd") && playerInLog == null)
+        {
+            gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("RoadEnd") && playerInLog != null)
+        {
+            playerInLog.transform.SetParent(null);
+            gameObject.SetActive(false);
+        }
     }
 
 }
