@@ -41,6 +41,14 @@ public class LvlSounds : MonoBehaviour
     {
         mySource.PlayOneShot(SFX[0]);
     }
+    public void DeathByCar()
+    {
+        mySource.PlayOneShot(SFX[3]);
+    }
+    public void DeathByWater()
+    {
+        mySource.PlayOneShot(SFX[4]);
+    }
     private IEnumerator AHonkWillPlay()
     {
         yield return new WaitForSeconds(3.5f);
