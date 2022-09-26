@@ -10,6 +10,7 @@ public class Win : MonoBehaviour
     [SerializeField] private CanvasGroup group;
     [SerializeField] private GameObject winTitle, replayB, menuB;
     [SerializeField] private Transform TitlePos,replayBPos, menuBPos;
+    [SerializeField] private ParticleSystem confettiParticles;
     private Transform TitleOldPos, replayBOldPos, menuBOldPos;
 
     private void Awake()
@@ -37,6 +38,8 @@ public class Win : MonoBehaviour
         TweenToTarget(winTitle, TitlePos);
         TweenToTarget(replayB, replayBPos);
         TweenToTarget(menuB, menuBPos);
+
+        StartCoroutine(PlayParticles());
     }
 
     public void OnReset()
@@ -51,5 +54,12 @@ public class Win : MonoBehaviour
     private void TweenToTarget(GameObject target, Transform newPos)
     {
         target.transform.DOMove(newPos.transform.position, 1, false);
+    }
+
+    private IEnumerator PlayParticles()
+    {
+        yield return new WaitForSeconds(2f);
+
+        confettiParticles.Play();
     }
 }
