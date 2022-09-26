@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
 
     private void RestartPlayer()
     {
-        Debug.Log("initial position");
         gameObject.transform.position = spawnPos.transform.position;
     }
 
