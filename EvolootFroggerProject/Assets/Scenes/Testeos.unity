@@ -6317,7 +6317,7 @@ GameObject:
   - component: {fileID: 571370007}
   m_Layer: 0
   m_Name: Spawn
-  m_TagString: Danger
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9276,7 +9276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859a299e61c04a34f91e59781e0c31d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPos: {fileID: 571370007}
+  spawnPos: {fileID: 0}
 --- !u!54 &1610449603
 Rigidbody:
   m_ObjectHideFlags: 0

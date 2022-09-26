@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     GameManager gameManager;
 
     private BoxCollider characterCollider;
-    [SerializeField] public Transform spawnPos;
+    [SerializeField] private Transform spawnPos;
 
     private bool hitted;
 
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         characterCollider = GetComponent<BoxCollider>();
         gameManager = FindObjectOfType<GameManager>();
+        spawnPos = GameObject.FindGameObjectWithTag("Respawn").transform;
     }
 
     public void OnEnable()

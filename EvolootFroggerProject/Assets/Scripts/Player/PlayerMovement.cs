@@ -5,15 +5,15 @@ using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float MovementDuration=0.15f;
+    [SerializeField] private float MovementDuration;
     [SerializeField] private float JumpPower;
-    [SerializeField] private float ShakePower=0.2f;
-    [SerializeField] private float ShakeRandomness = 90;
+    [SerializeField] private float ShakePower;
+    [SerializeField] private float ShakeRandomness;
     [SerializeField] private Ease JumpEase;
     [SerializeField] private Transform playerMesh;
     public delegate void move(float positionZ);
     public event move OnMoved;
-    [SerializeField] private float rayCastDistance =2f;
+    [SerializeField] private float rayCastDistance;
     [SerializeField] private bool grounded =true;
     private float yStartPosition;
     RaycastHit hit;
