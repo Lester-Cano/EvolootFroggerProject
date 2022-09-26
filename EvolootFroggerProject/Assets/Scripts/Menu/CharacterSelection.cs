@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] characters;
+    [SerializeField] public int selectedCharacter;
+
+    public void NextCharacter()
     {
-        
+        characters[selectedCharacter].gameObject.SetActive(false);
+        selectedCharacter = (selectedCharacter + 1) % characters.Length;
+        characters[selectedCharacter].SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PreviousCharacter()
     {
-        
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter--;
+
+        if(selectedCharacter < 0)
+        {
+            selectedCharacter += characters.Length;
+        }
+        characters[selectedCharacter].SetActive(true);
     }
 }
