@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     RaycastHit hit;
     Tweener shakeScale;
     
+
+
     void Start()
     {
         yStartPosition = transform.position.y;
@@ -30,52 +32,21 @@ public class PlayerMovement : MonoBehaviour
         {
             if (hit.collider.CompareTag("Ground"))
             {
-                Debug.Log("tal");
+                
                 grounded = true;
             }
         }
     }
     void Update()
     {
-        Sequence Jump = DOTween.Sequence();
+       
         if (Input.anyKeyDown && grounded/*&& (transform.position.x % 1) == 0 && (transform.position.z % 1) == 0*/)
         {
-            if (Input.GetAxis("Horizontal")!= 0 )
-            {
-                Jump.Insert(0, transform.DORotate(new Vector3(0, 90 * Mathf.Sign(Input.GetAxis("Horizontal")), 0), MovementDuration));
-                if (transform.position.y >= yStartPosition) Jump.Insert(0,transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x + Mathf.Sign(Input.GetAxis("Horizontal"))), yStartPosition, Mathf.RoundToInt(transform.position.z)),JumpPower,1, MovementDuration, false)).SetEase(JumpEase);
-                else
-                {
-                  Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x + Mathf.Sign(Input.GetAxis("Horizontal"))), transform.position.y, Mathf.RoundToInt(transform.position.z)), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
-                }
-                FeedbackMovent();
-            }
-            if(Input.GetAxis("Vertical") != 0 )
-            {
-
-                float rotationValue;
-                if (Mathf.Sign(Input.GetAxis("Vertical")) < 0) rotationValue = 180f;
-                else rotationValue = 0f;
-                Jump.Insert(0, transform.DORotate(new Vector3(0, rotationValue, 0), MovementDuration));
-                if (transform.position.y >= yStartPosition)
-                {
-                    Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x), yStartPosition, Mathf.RoundToInt(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")))), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
-                }
-                else
-                {
-                    Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")))), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
-                }
-                FeedbackMovent();
-                if (OnMoved != null)
-                {
-                    OnMoved(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")));
-                }
-                grounded = false;
-            }
-            //resetTransform;
-
+            
+            MoveChar();
+           
         }
-
+       
     }
     void FeedbackMovent()
     {
@@ -88,4 +59,47 @@ public class PlayerMovement : MonoBehaviour
         grounded = false;
     }
 
+ 
+
+
+    private void MoveChar()
+    {
+      
+        Sequence Jump = DOTween.Sequence();
+        
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            Jump.Insert(0, transform.DORotate(new Vector3(0, 90 * Mathf.Sign(Input.GetAxis("Horizontal")), 0), MovementDuration));
+            if (transform.position.y >= yStartPosition) Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x + Mathf.Sign(Input.GetAxis("Horizontal"))), yStartPosition, Mathf.RoundToInt(transform.position.z)), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
+            else
+            {
+                Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x + Mathf.Sign(Input.GetAxis("Horizontal"))), transform.position.y, Mathf.RoundToInt(transform.position.z)), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
+            }
+            FeedbackMovent();
+        }
+        if (Input.GetAxis("Vertical") != 0)
+        {
+
+            float rotationValue;
+            if (Mathf.Sign(Input.GetAxis("Vertical")) < 0) rotationValue = 180f;
+            else rotationValue = 0f;
+            Jump.Insert(0, transform.DORotate(new Vector3(0, rotationValue, 0), MovementDuration));
+            if (transform.position.y >= yStartPosition)
+            {
+                Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x), yStartPosition, Mathf.RoundToInt(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")))), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
+            }
+            else
+            {
+                Jump.Insert(0, transform.DOJump(new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")))), JumpPower, 1, MovementDuration, false)).SetEase(JumpEase);
+            }
+            FeedbackMovent();
+            if (OnMoved != null)
+            {
+                OnMoved(transform.position.z + Mathf.Sign(Input.GetAxis("Vertical")));
+            }
+            grounded = false;
+        }
+        //resetTransform;
+
+    }
 }

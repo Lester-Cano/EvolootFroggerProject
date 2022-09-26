@@ -21,7 +21,7 @@ public class StumpsPooling : MonoBehaviour
     void Start()
     {
         AddStumpsToPool(numberOfStumps);
-        SpawnCar();
+        SpawnStump();
     }
 
     private void Update()
@@ -30,7 +30,7 @@ public class StumpsPooling : MonoBehaviour
 
         if (timer >= timeBetweenStumps)
         {
-            SpawnCar();
+            SpawnStump();
             timer = 0f;
         }
     }
@@ -61,12 +61,12 @@ public class StumpsPooling : MonoBehaviour
         return stumpList[stumpList.Count - 1];
     }
 
-    void SpawnCar()
+    void SpawnStump()
     {
         GameObject stump = RequestStump();
         if (directionLeft)
         {
-            stump.gameObject.GetComponent<CarMoving>().directionLeftCar = true;
+            stump.gameObject.GetComponent<Stump>().directionStump = true;
             stump.transform.position = positions[1].transform.position + Vector3.left * stumpOffset;
         }
         else

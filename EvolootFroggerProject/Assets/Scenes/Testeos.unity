@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 397388082}
   m_Layer: 0
   m_Name: leg1 (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4283,7 +4283,7 @@ GameObject:
   - component: {fileID: 780000160}
   m_Layer: 0
   m_Name: leg1 (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5381,7 +5381,7 @@ GameObject:
   - component: {fileID: 1001985422}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8229,7 +8229,7 @@ GameObject:
   - component: {fileID: 1453198637}
   m_Layer: 0
   m_Name: leg1 (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9331,7 +9331,7 @@ GameObject:
   - component: {fileID: 1622690766}
   m_Layer: 0
   m_Name: head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9658,6 +9658,7 @@ MonoBehaviour:
   TitlePos: {fileID: 2079726100}
   replayBPos: {fileID: 2045319469}
   menuBPos: {fileID: 575414761}
+  confettiParticles: {fileID: 0}
 --- !u!114 &1631671757
 MonoBehaviour:
   m_ObjectHideFlags: 0
