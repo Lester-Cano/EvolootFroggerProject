@@ -31,12 +31,10 @@ public class Timer : MonoBehaviour
     public void OnEnable()
     {
         gameManager.OnRestart += ResetTimer;
-        canTime = true;
     }
     public void OnDisable()
     {
         gameManager.OnRestart -= ResetTimer;
-        canTime = false;
     }
 
     private void ResetTimer()
