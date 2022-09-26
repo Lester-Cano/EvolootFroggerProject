@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float ShakeRandomness;
     [SerializeField] private Ease JumpEase;
     [SerializeField] private Transform playerMesh;
+    private JumpSound jump;
     public delegate void move(float positionZ);
     public event move OnMoved;
     [SerializeField] private float rayCastDistance;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         yStartPosition = transform.position.y;
+        jump = GetComponent<JumpSound>();
     }
 
     public void OnEnable()
@@ -78,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
     {
       
         Sequence Jump = DOTween.Sequence();
-        
+        jump.OnJump();
         if (Input.GetAxis("Horizontal") != 0)
         {
             Jump.Insert(0, transform.DORotate(new Vector3(0, 90 * Mathf.Sign(Input.GetAxis("Horizontal")), 0), MovementDuration));

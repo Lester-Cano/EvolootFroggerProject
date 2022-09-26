@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public delegate void LostALive();
     public event LostALive OnLostALive;
     public event LostALive OnReachEnd;
+    private LvlSounds sfx;
 
     GameManager gameManager;
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        sfx = FindObjectOfType<LvlSounds>();
         characterCollider = GetComponent<BoxCollider>();
         gameManager = FindObjectOfType<GameManager>();
         spawnPos = GameObject.FindGameObjectWithTag("Respawn").transform;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
             StartCoroutine(RestartPlayerHitted());
             OnLostALive?.Invoke();
+
         }
         else if (other.CompareTag("WinZone"))
         {
