@@ -5671,7 +5671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 500.00006}
+  m_AnchoredPosition: {x: 0, y: 500}
   m_SizeDelta: {x: 514.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341368093
@@ -5797,7 +5797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044224443234608214, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: timeBetweenCars
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5044224443234608214, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: positions.Array.data[0]
@@ -7924,7 +7924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044224443234608214, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: timeBetweenCars
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5044224443234608214, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: positions.Array.data[0]
@@ -9050,7 +9050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 549.6, y: -101.9}
+  m_AnchoredPosition: {x: 549.6, y: -101.900024}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1702414896
@@ -10101,7 +10101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 500.00006}
+  m_AnchoredPosition: {x: 0, y: 500}
   m_SizeDelta: {x: 514.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052104945
