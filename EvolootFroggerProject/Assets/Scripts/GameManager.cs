@@ -14,8 +14,13 @@ public class GameManager : MonoBehaviour
     private PlayerController playerController;
     private PlayerMovement PlayerMovement;
 
+    public GameObject[] characterPrefabs;
+    [SerializeField] private Transform spawnPos;
+
     private void Awake()
     {
+        LoadCharacter();
+
         timer = FindObjectOfType<Timer>();
         healthController = FindObjectOfType<HealthController>();
         playerController = FindObjectOfType<PlayerController>();
@@ -66,5 +71,15 @@ public class GameManager : MonoBehaviour
     private void CheckIfLost()
     {
         HandleGameOver();
+    }
+
+    private void LoadCharacter()
+    {
+        spawnPos = GameObject.FindGameObjectWithTag("Respawn").transform;
+
+        int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
+
+        GameObject prefab = characterPrefabs[selectedCharacter];
+        GameObject clone = Instantiate(prefab, spawnPos.position, Quaternion.identity);
     }
 }
