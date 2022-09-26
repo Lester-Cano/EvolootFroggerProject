@@ -15,6 +15,8 @@ public class Timer : MonoBehaviour
     public int remainingDuration;
     public int maxDuration;
 
+    public bool canTime;
+
     public int Duration { get; private set; }
 
     private void Awake()
@@ -31,10 +33,12 @@ public class Timer : MonoBehaviour
     public void OnEnable()
     {
         gameManager.OnRestart += ResetTimer;
+        canTime = true;
     }
     public void OnDisable()
     {
         gameManager.OnRestart -= ResetTimer;
+        canTime = false;
     }
 
     private void ResetTimer()
@@ -60,15 +64,18 @@ public class Timer : MonoBehaviour
     {
         while (remainingDuration >= 0)
         {
-            if (remainingDuration == 0)
+            if (canTime)
             {
-                TimeIsOver();
+                if (remainingDuration == 0)
+                {
+                    TimeIsOver();
+                }
+
+                UpdateUI(remainingDuration);
+                remainingDuration--;
+
+                yield return new WaitForSeconds(1f);
             }
-
-            UpdateUI(remainingDuration);
-            remainingDuration--;
-
-            yield return new WaitForSeconds(1f);
         }
     }
 
