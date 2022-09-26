@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public event GameOver OnGameOverLost;
     public event GameOver OnGameOverWin;
     public event GameOver OnRestart;
-
+    private LvlSounds sounds;
     private Timer timer;
     private HealthController healthController;
     private PlayerController playerController;
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         LoadCharacter();
 
         timer = FindObjectOfType<Timer>();
+        sounds = FindObjectOfType<LvlSounds>();
         healthController = FindObjectOfType<HealthController>();
         playerController = FindObjectOfType<PlayerController>();
         PlayerMovement = FindObjectOfType<PlayerMovement>();
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         playerController.OnDisable();
         PlayerMovement.OnDisable();
         OnGameOverLost?.Invoke();
+        sounds.StopAllCoroutines();
     }
 
     public void HandleWin()
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour
         playerController.OnDisable();
         PlayerMovement.OnDisable();
         OnGameOverWin?.Invoke();
+        sounds.StopAllCoroutines();
     }
 
     private void CheckIfLost()

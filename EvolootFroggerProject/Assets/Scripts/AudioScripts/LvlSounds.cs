@@ -15,19 +15,16 @@ public class LvlSounds : MonoBehaviour
     }
     private void Start()
     {
-        
         mySource = GetComponent<AudioSource>();
         StartCoroutine(AHonkWillPlay());
     }
     private void OnEnable()
     {
-        manager.OnGameOverLost += Losing;
-        manager.OnGameOverWin += Losing;
+        manager.OnGameOverWin += Wining;
     }
     private void OnDisable()
     {
-        manager.OnGameOverLost -= Losing;
-        manager.OnGameOverWin -= Losing;
+        manager.OnGameOverWin -= Wining;
     }
     private void BigCarHonk()
     {
@@ -49,6 +46,11 @@ public class LvlSounds : MonoBehaviour
     {
         mySource.PlayOneShot(SFX[4]);
     }
+    private void Wining()
+    {
+        mySource.PlayOneShot(SFX[5]);
+        
+    }
     private IEnumerator AHonkWillPlay()
     {
         yield return new WaitForSeconds(3.5f);
@@ -67,8 +69,5 @@ public class LvlSounds : MonoBehaviour
         }
         StartCoroutine(AHonkWillPlay());
     }
-    private void Losing()
-    {
-        StopCoroutine(AHonkWillPlay());
-    }
+    
 }
