@@ -34,7 +34,6 @@ public class CarMoving : MonoBehaviour
     {
         if (other.CompareTag("RoadEnd"))
         {
-            Debug.Log("cardie");
             gameObject.SetActive(false);
         }
     }

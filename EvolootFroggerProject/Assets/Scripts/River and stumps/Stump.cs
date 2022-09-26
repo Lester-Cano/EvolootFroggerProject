@@ -66,7 +66,6 @@ public class Stump : MonoBehaviour
             
             if (other.CompareTag("RoadEnd"))
             {
-                Debug.Log("buenas");
                 gameObject.SetActive(false);
             }
     }

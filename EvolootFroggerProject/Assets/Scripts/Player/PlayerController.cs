@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private BoxCollider characterCollider;
     [SerializeField] public Transform spawnPos;
 
+    private bool hitted;
+
     private void Awake()
     {
         characterCollider = GetComponent<BoxCollider>();
@@ -32,16 +34,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Danger"))
+        if (other.CompareTag("Danger") && hitted == false)
         {
-            characterCollider.isTrigger = false;
-            RestartPlayer();
+            hitted = true;
+
+            StartCoroutine(RestartPlayerHitted());
             OnLostALive?.Invoke();
-            characterCollider.isTrigger = false;
         }
         else if (other.CompareTag("WinZone"))
         {
             OnReachEnd?.Invoke();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Danger") && hitted == true)
+        {
+            hitted = false;
         }
     }
 
@@ -51,4 +61,10 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.position = spawnPos.transform.position;
     }
 
+    private IEnumerator RestartPlayerHitted()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        gameObject.transform.position = spawnPos.transform.position;
+    }
 }

@@ -43,7 +43,6 @@ public class ScoreManager : MonoBehaviour
         {
             maxScore = (int)positionZ;
         }
-        Debug.Log((int)positionZ);
 
         if (previousScore != maxScore && maxScore >= 0)
         {
