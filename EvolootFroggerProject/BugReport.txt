@@ -8,3 +8,6 @@ reinicie su proxima vida en la posicion inicial.
 
 - En github pages, es posible que al momento de elegir un personaje para jugar, se ocasione
 un bug que crashee el juego, creemos que es un problema de github pages.
+
+- Aveces cuando el jugador aterriza en un troco, no podra seguir moviendose ya que no 
+detecta que esta tocando el suelo.
