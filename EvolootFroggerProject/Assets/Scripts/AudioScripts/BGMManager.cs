@@ -35,6 +35,7 @@ public class BGMManager : MonoBehaviour
         if (myManager != null)
         {
             myManager.OnGameOverLost += OnLosing;
+            myManager.OnRestart += OnReset;
         }
         if (scene.name == "MainMenu" && mySource != null)
         {
@@ -46,5 +47,10 @@ public class BGMManager : MonoBehaviour
             mySource.clip = bgMusic[1];
             mySource.Play();
         }
+    }
+    private void OnReset()
+    {
+        mySource.clip = bgMusic[1];
+        mySource.Play();
     }
 }
