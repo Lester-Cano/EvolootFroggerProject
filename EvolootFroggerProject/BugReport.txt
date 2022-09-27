@@ -1,0 +1,10 @@
+Bug Report:
+
+- Cuando se hace un spam continuo de los movimientos el jugador, el modelo puede 
+deformarse y moverse de manera caotica.
+
+- Al impactar con vehiculo, y estar en movimiento, algunas provoca que el jugador no
+reinicie su proxima vida en la posicion inicial.
+
+- En github pages, es posible que al momento de elegir un personaje para jugar, se ocasione
+un bug que crashee el juego, creemos que es un problema de github pages.
