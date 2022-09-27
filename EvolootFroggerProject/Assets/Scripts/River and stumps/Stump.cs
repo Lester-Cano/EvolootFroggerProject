@@ -18,11 +18,12 @@ public class Stump : MonoBehaviour
         {
             MoveRight();
         }
-       /* if (timer > lifeTime)
+        if (timer > lifeTime)
         {
             player.transform.SetParent(null);
+            timer = 0;
             this.gameObject.SetActive(false);
-        }*/
+        }
     }
 
     void MoveLeft()
@@ -55,7 +56,7 @@ public class Stump : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-           // timer += Time.deltaTime;
+            timer += Time.deltaTime;
         }
         
     }
