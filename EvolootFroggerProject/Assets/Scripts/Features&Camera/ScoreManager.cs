@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     private PlayerMovement playerMovement;
     private int previousScore;
     HealthController healthController;
+
     private void Awake()
     {
         gm = FindObjectOfType<GameManager>();
@@ -29,11 +30,15 @@ public class ScoreManager : MonoBehaviour
     {
         playerMovement.OnMoved += OnScoreChanged;
         healthController.OnLifeLost += ResetScore;
+        gm.OnGameOverLost += ResetScore;
+        gm.OnGameOverWin += ResetScore;
     }
     private void OnDisable()
     {
         playerMovement.OnMoved -= OnScoreChanged;
         healthController.OnLifeLost -= ResetScore;
+        gm.OnGameOverLost -= ResetScore;
+        gm.OnGameOverWin -= ResetScore;
     }
 
     public void OnScoreChanged(float positionZ)
@@ -67,5 +72,6 @@ public class ScoreManager : MonoBehaviour
     private void ResetScore()
     {
         scoreTM.text = 0.ToString();
+        maxScore = 0;
     }
 }

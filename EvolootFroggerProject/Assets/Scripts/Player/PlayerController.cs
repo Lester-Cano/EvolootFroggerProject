@@ -28,11 +28,13 @@ public class PlayerController : MonoBehaviour
     public void OnEnable()
     {
         gameManager.OnRestart += RestartPlayer;
+        gameManager.OnGameOverLost += RestartPlayer;
     }
 
     public void OnDisable()
     {
         gameManager.OnRestart -= RestartPlayer;
+        gameManager.OnGameOverLost -= RestartPlayer;
     }
 
     private void OnTriggerEnter(Collider other)
