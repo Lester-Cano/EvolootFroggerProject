@@ -5156,8 +5156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefabs:
   - {fileID: 2724725076598031689, guid: b07441c6112c32a4cbb600d31b9b4bf8, type: 3}
-  - {fileID: 5984048144471109486, guid: 9b9c93cabda8d08488e78153e49b9875, type: 3}
-  - {fileID: 4372308867084172602, guid: 0f43632ef9081a4468cdc549708df128, type: 3}
+  - {fileID: 3034552360064581457, guid: 9b9c93cabda8d08488e78153e49b9875, type: 3}
+  - {fileID: 4988878384934616907, guid: 0f43632ef9081a4468cdc549708df128, type: 3}
   spawnPos: {fileID: 0}
 --- !u!1 &67667224
 GameObject:
@@ -5807,6 +5807,10 @@ PrefabInstance:
       propertyPath: positions.Array.data[1]
       value: 
       objectReference: {fileID: 106280037}
+    - target: {fileID: 5316599714588071647, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb986341fb0b6d84d8a7f56e0f7bd6f8, type: 2}
     - target: {fileID: 5371000445375690203, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: m_Name
       value: Car Road (2)
@@ -7643,6 +7647,10 @@ PrefabInstance:
       propertyPath: positions.Array.data[1]
       value: 
       objectReference: {fileID: 990381313}
+    - target: {fileID: 5316599714588071647, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb986341fb0b6d84d8a7f56e0f7bd6f8, type: 2}
     - target: {fileID: 5371000445375690203, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: m_Name
       value: Car Road
@@ -7764,6 +7772,10 @@ PrefabInstance:
       propertyPath: positions.Array.data[1]
       value: 
       objectReference: {fileID: 18609889}
+    - target: {fileID: 5316599714588071647, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb986341fb0b6d84d8a7f56e0f7bd6f8, type: 2}
     - target: {fileID: 5371000445375690203, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: m_Name
       value: Car Road (5)
@@ -7934,6 +7946,10 @@ PrefabInstance:
       propertyPath: positions.Array.data[1]
       value: 
       objectReference: {fileID: 729751651}
+    - target: {fileID: 5316599714588071647, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb986341fb0b6d84d8a7f56e0f7bd6f8, type: 2}
     - target: {fileID: 5371000445375690203, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: m_Name
       value: Car Road (1)
@@ -8024,6 +8040,10 @@ PrefabInstance:
       propertyPath: positions.Array.data[1]
       value: 
       objectReference: {fileID: 931659627}
+    - target: {fileID: 5316599714588071647, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb986341fb0b6d84d8a7f56e0f7bd6f8, type: 2}
     - target: {fileID: 5371000445375690203, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: m_Name
       value: Car Road (3)
@@ -8395,7 +8415,7 @@ Transform:
   m_GameObject: {fileID: 1462715028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1.5, z: 7}
-  m_LocalScale: {x: 36.818188, y: 0.3, z: 30.312447}
+  m_LocalScale: {x: 66.64356, y: 0.3, z: 72.69296}
   m_Children: []
   m_Father: {fileID: 272599419}
   m_RootOrder: 0
@@ -9458,6 +9478,10 @@ PrefabInstance:
       propertyPath: positions.Array.data[1]
       value: 
       objectReference: {fileID: 1210077066}
+    - target: {fileID: 5316599714588071647, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb986341fb0b6d84d8a7f56e0f7bd6f8, type: 2}
     - target: {fileID: 5371000445375690203, guid: a47265967718b2c4c8a87c871ff4ab7c, type: 3}
       propertyPath: m_Name
       value: Car Road (4)
