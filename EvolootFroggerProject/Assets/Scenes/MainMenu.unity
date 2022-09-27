@@ -2207,7 +2207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &945156083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2250,15 +2250,15 @@ MonoBehaviour:
   m_text: 'Alejandro Quiceno Mejia: Programmer, 2D art, 3D art.
 
     Nestor Javier
-    Cano: Programmer.
+    Cano: Programmer, Game Designer.
 
     Alonso Mejia: Programmer, Audio.
 
-    Julian Rosero Narvaez:
-    Programmer, UI Design.
+    Julian
+    Rosero Narvaez: Programmer, UI Design.
 
-    Marian Johanna Piedrahita: 3D art, animations, rig,
-    retopology.'
+    Marian Johanna Piedrahita: 3D art,
+    animations, rig, retopology.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -3624,7 +3624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1791317488
 RectTransform:
   m_ObjectHideFlags: 0
