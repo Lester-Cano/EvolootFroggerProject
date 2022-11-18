@@ -11374,6 +11374,7 @@ GameObject:
   - component: {fileID: 1462715032}
   - component: {fileID: 1462715031}
   - component: {fileID: 1462715030}
+  - component: {fileID: 1462715033}
   m_Layer: 0
   m_Name: RiverArea (1)
   m_TagString: Danger
@@ -11457,6 +11458,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462715028}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1462715033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462715028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1470501069
 GameObject:
   m_ObjectHideFlags: 0

@@ -4818,6 +4818,7 @@ GameObject:
   - component: {fileID: 2401747193133249157}
   - component: {fileID: 4167304576182478569}
   - component: {fileID: 3758350823877977396}
+  - component: {fileID: 5382013547802865990}
   m_Layer: 0
   m_Name: Meterotio
   m_TagString: Danger
@@ -4932,3 +4933,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upForce: 2
   sideForce: 4
+--- !u!114 &5382013547802865990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4039089025399725676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343fa17f500bb374485d7baa7f9d39dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
